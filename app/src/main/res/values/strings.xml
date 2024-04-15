@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Screens</string>
+    <string name="app_name">MAIN</string>
+
+    <string name="app_name2">Det var en fågel?</string>
 </resources>
