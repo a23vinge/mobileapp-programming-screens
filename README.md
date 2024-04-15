@@ -6,34 +6,53 @@
 _Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+1. skapde en knapp
+2. adderade parent activity för Main
+3. Adderade en textview för main2
+4. Addera en ny string för textview i main2.
+5. buttonclicker för att knappen ska fungera och värdena Vincent och 11 adderades i main.
+6. kod som tar emott information i main2 och adderar en textview. 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+1. <Button
+        android:id="@+id/Newbtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Lé Butt"
+        />
+        
+     2.       android:parentActivityName=".MainActivity"/>
+
+3. <TextView
+        android:id="@+id/text2"   
+        android:text="@string/app_name2"
+        />
+        
+        
+4. <string name="app_name2">Det var en fågel?</string>
+ 
+ 
+ 
+5.  Button b = findViewById(R.id.Newbtn);
+  
+b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            intent.putExtra("name", "Vincent");
+                intent.putExtra("number", 11);
+                
+6.
+    String name = extras.getString("name");
+            int number = extras.getInt("number");
+            // Do something with the name and number
+
+            TextView text1 = findViewById(R.id.text2);
+            text1.setText(name.concat(Integer.toString(number)));
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](main.png)
+![](second.png)
 
 Läs gärna:
 
